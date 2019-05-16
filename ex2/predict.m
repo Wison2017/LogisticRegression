@@ -14,8 +14,13 @@ p = zeros(m, 1);
 %               your learned logistic regression parameters. 
 %               You should set p to a vector of 0's and 1's
 %
+p = sigmoid(X * theta)
 
+index_1 = find(p >= 0.5)
+p(index_1) = 1
 
+index_0 = find(p < 0.5)
+p(index_0) = 0
 
 
 
